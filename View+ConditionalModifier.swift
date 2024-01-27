@@ -34,7 +34,7 @@ extension View {
     /// - Returns: If the optional value is non-nil, returns the transformed content; otherwise, returns the original view.
     @ViewBuilder
     func `ifLet`<T, Content: View>(_ value: T?, transform: (Self, T) -> Content) -> some View {
-        if let value = value {
+        if let value {
             transform(self, value)
         } else {
             self
